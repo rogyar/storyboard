@@ -1,0 +1,31 @@
+{
+    "name": "rogyar/storyboard",
+    "description": "A simple application that allows to accept info and save it on a disk drive",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yaroslav Rogoza",
+            "email": "rogyar@gmail.com"
+        }
+    ],
+    "repositories": {
+        "rogyar/storyboard": {
+            "type": "vcs",
+            "url": "https://github.com/rogyar/storyboard-lib.git"
+        }
+    },
+
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "rogyar/storyboard-lib": "^1.0"
+    },
+
+    "require-dev": {
+        "phpunit/phpunit": "5.4.*"
+    },
+
+    "autoload": {
+        "psr-4": {"lib\\": "lib/"}
+    }
+}

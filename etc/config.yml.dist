@@ -1,0 +1,3 @@
+token: 'sometoken'
+storagePath: 'var/storage.html'
+templatePath: 'view/index.phtml'
