@@ -2,7 +2,7 @@
 
 namespace test\unit;
 
-use \lib\Storyboard;
+use \Rogyar\Storyboard\Storyboard;
 use \Symfony\Component\Yaml\Yaml;
 
 class StoryboardTest extends \PHPUnit_Framework_TestCase
@@ -13,7 +13,7 @@ class StoryboardTest extends \PHPUnit_Framework_TestCase
     protected $correctToken = 'sometoken';
     /** @var string  */
     protected $configPath = 'etc/config.yml';
-    /** @var \lib\Storyboard|\PHPUnit_Framework_MockObject_MockObject $storyBoard */
+    /** @var Storyboard\PHPUnit_Framework_MockObject_MockObject $storyBoard */
     protected $storyBoardMock;
     /** @var  string */
     protected $originalContent;

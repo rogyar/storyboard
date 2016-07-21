@@ -10,7 +10,7 @@
         }
     ],
     "repositories": {
-        "rogyar/storyboard": {
+        "rogyar/storyboard-lib": {
             "type": "vcs",
             "url": "https://github.com/rogyar/storyboard-lib.git"
         }
@@ -18,7 +18,7 @@
 
     "require": {
         "php": "^5.6 || ^7.0",
-        "rogyar/storyboard-lib": "^1.0"
+        "rogyar/storyboard-lib": "1.0.x-dev"
     },
 
     "require-dev": {

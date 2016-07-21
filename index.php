@@ -1,7 +1,7 @@
 <?php
 require_once('vendor/autoload.php');
 
-use lib\Storyboard;
+use Rogyar\Storyboard\Storyboard;
 use Symfony\Component\Yaml\Yaml;
 
 $token = isset($_GET['token'])? $_GET['token'] : '';
