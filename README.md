@@ -11,7 +11,9 @@ Storyboard is a small system that allows to pass some text content via POST requ
 - Make sure var/storage.html is writable by webserver
 
 ## Usage
+
 - To write some content into the storage, just pass the content via `data` parameter using POST request to http://yourstoryboard.com/?token=yourtoken (change to your own URL)
+- If you want to append a new content to the stored in the storage, pass the `append` parameter additionally http://yourstoryboard.com/?token=yourtoken&append=1 (change to your own URL)
 - To read the written content just go to the index page http://yourstoryboard.com/?token=yourtoken (change to your own URL)
 
 You are also able to edit the template file. For this change `templatePath` value to some custom template and make your changes inside of this template. 

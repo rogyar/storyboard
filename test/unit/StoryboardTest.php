@@ -13,7 +13,7 @@ class StoryboardTest extends \PHPUnit_Framework_TestCase
     protected $correctToken = 'sometoken';
     /** @var string  */
     protected $configPath = 'etc/config.yml';
-    /** @var Storyboard\PHPUnit_Framework_MockObject_MockObject $storyBoard */
+    /** @var Storyboard|\PHPUnit_Framework_MockObject_MockObject $storyBoard */
     protected $storyBoardMock;
     /** @var  string */
     protected $originalContent;
@@ -110,6 +110,26 @@ class StoryboardTest extends \PHPUnit_Framework_TestCase
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('The token is invalid');
         $this->storyBoardMock->writeContent('somecontent');
+    }
+
+    public function testWriteAppendLogicIsDisabledByDefault()
+    {
+        $content = 'somecontent';
+        $this->storyBoardMock->writeContent($content);
+        $contentSuffix = ' with suffix';
+        $this->storyBoardMock->writeContent($contentSuffix);
+        $finalContent = $this->storyBoardMock->getContent();
+        $this->assertNotSame($content . $contentSuffix, $finalContent);
+    }
+
+    public function testAppendLogicWorksOnFileWrite()
+    {
+        $content = 'somecontent';
+        $this->storyBoardMock->writeContent($content);
+        $contentSuffix = ' with suffix';
+        $this->storyBoardMock->writeContent($contentSuffix, true);
+        $finalContent = $this->storyBoardMock->getContent();
+        $this->assertSame($content . $contentSuffix, $finalContent);
     }
 
     public function testWrongTemplateThrowsException()
